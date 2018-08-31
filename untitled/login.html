@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>login</title>
+    <link rel="stylesheet" href="css/login.css">
+
+    <script>
+        (function (doc, win) {
+            let docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    let clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+            (function(){
+                return;
+                let dpr = scale =1;
+                let isIPhone = win.navigator.appVersion.match(/iphone/gi);
+                let devicePixelRatio = win.devicePixelRatio;
+                if (isIPhone) {
+                    if (devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
+                        dpr = 3;
+                    } else if (devicePixelRatio >= 2 && (!dpr || dpr >= 2)){
+                        dpr = 2;
+                    } else {
+                        dpr = 1;
+                    }
+                } else {
+                    dpr = 1;
+                }
+                scale = 1 / dpr;
+                let metaEl = "";
+                metaEl = doc.createElement('meta');
+                metaEl.setAttribute('name', 'viewport');
+                metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+                if (docEl.firstElementChild) {
+                    docEl.firstElementChild.appendChild(metaEl);
+                } else {
+                    let wrap = doc.createElement('div');
+                    wrap.appendChild(metaEl);
+                    doc.write(wrap.innerHTML);
+                }
+            })();
+        })(document, window);
+    </script>
+</head>
+<body>
+
+<div class="all">
+    <div class="head">
+        <span></span>
+        <span>登陆</span>
+    </div>
+    <div class="profilephoto"><img src="img/denglu_03.png"></div>
+    <form>
+            <!--<legend>Personalia:</legend>-->
+            <div class="c1"> 姓名: <input type="text"><br></div>
+            <div class="c2"> 手机号: <input type="text"><br></div>
+            <div class="button">
+                <span></span>
+                <button class="denglu" type="submit">登 陆</button>
+                <span></span>
+            </div>
+    </form>
+</div>
+</body>
+</html>

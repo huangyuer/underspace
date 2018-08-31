@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c1, .c2 {
+            width:500px;
+            height: 20px;
+            margin: 0 auto;
+            padding-top: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #f2f0e7;
+        }
+        .c1 input{
+            border: none;
+        }
+        .c2 input{
+            border: none;
+        }
+        .c3 input{
+            border: none;
+        }
+        .button{
+            width:300px;
+            height: 100px;
+            margin: 30px auto;
+            background-color: #ffc733;
+            display: flex;
+
+        }
+        .button span{
+            display: inline-block;
+            height: 99px;
+        }
+        .button span:first-child{
+            flex:100;
+        }
+        .button button{
+            flex:100;
+            border:0;
+            background-color:transparent;
+           /*padding-left: 138px;*/
+
+            font-size: 30px;
+
+        }
+        .button span:nth-child(3){
+            flex: 100;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<form>
+    <fieldset>
+        <legend>Personalia:</legend>
+        <div class="c1"> 姓名: <input type="text"><br></div>
+        <div class="c2"> 手机号: <input type="text"><br></div>
+        <div class="button">
+            <span></span>
+            <button class="denglu">登 陆</button>
+            <span></span>
+        </div>
+
+
+    </fieldset>
+</form>
+
+</body>
+</html>
